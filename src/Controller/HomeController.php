@@ -1,26 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: aurelwcs
- * Date: 08/04/19
- * Time: 18:40
- */
 
 namespace App\Controller;
+use App\Service\Jeux;
 
 class HomeController extends AbstractController
 {
 
-    /**
-     * Display home page
-     *
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
-    public function index()
-    {
-        return $this->twig->render('Home/index.html.twig');
+
+
+    public function index(){
+
+        $jeux = new Jeux();
+        $gain = $jeux->getGains();
+        return $this->twig->render('home/index.html.twig', [
+            'gain' => $gain,
+        ]);
     }
+    public function dialogue(){
+
+
+        return $this->twig->render('/dialogue/test.html.twig', [
+
+        ]);
+    }
+
+
 }

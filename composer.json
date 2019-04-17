@@ -11,7 +11,8 @@
     "require": {
         "php" : ">=7.2",
         "ext-pdo" : "*",
-        "twig/twig": "^2.4"
+        "twig/twig": "^2.4",
+        "unglud/slot-machine": "^0.2.0"
     },
     "require-dev": {
         "phpro/grumphp": "^0.15.0",
